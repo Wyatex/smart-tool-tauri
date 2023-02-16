@@ -59,7 +59,7 @@ const handleOpen = (value: string) => {
   } else {
     if (os === 'Darwin') {
       // macos打开
-      const command = Command.sidecar('bash', ['-c', 'open', splitValue[0]])
+      const command = new Command('bash', ['-c', 'open', splitValue[0]])
       command.on('close', (data) => {
         if (data.code) {
           window.$message.success('打开成功')
@@ -69,7 +69,7 @@ const handleOpen = (value: string) => {
       command.execute()
     } else if (os === 'Linux') {
       // linux打开
-      const command = Command.sidecar('bash', ['-c', 'xdg-open', splitValue[0]])
+      const command = new Command('bash', ['-c', 'xdg-open', splitValue[0]])
       command.on('close', (data) => {
         if (data.code) {
           window.$message.success('打开成功')
@@ -79,7 +79,7 @@ const handleOpen = (value: string) => {
       command.execute()
     } else {
       // windows打开
-      const command = Command.sidecar('cmd', ['/C', 'start', splitValue[0]])
+      const command = new Command('cmd', ['/C', 'start', splitValue[0]])
       command.on('close', (data) => {
         if (data.code) {
           window.$message.success('打开成功')
