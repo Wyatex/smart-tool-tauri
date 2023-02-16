@@ -26,6 +26,7 @@ jobs:
           node-version: 16
       - uses: pnpm/action-setup@v2.2.2
         with:
+          run_install: true
           version: latest
       - name: install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-latest'
