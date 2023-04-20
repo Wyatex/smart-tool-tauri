@@ -28,6 +28,10 @@
       "os": {
         "all": true
       },
+      "http": {
+        "all": true,
+        "scope": ["https://v1.hitokoto.cn/*"]
+      },
       "shell": {
         "all": false,
         "execute": true,
