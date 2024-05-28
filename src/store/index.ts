@@ -55,15 +55,7 @@ export const useStore = defineStore('global', () => {
   }
   const getDarkTheme = () => {
     const storageDarkTheme = window.localStorage.getItem('darkTheme')
-    if (storageDarkTheme) {
-      if (storageDarkTheme === 'true') {
-        darkTheme.value = true
-      } else {
-        darkTheme.value = false
-      }
-    } else {
-      darkTheme.value = false
-    }
+    darkTheme.value = storageDarkTheme === 'true' ? true : false
   }
   getData()
   getDarkTheme()
